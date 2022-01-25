@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 
-import Layout from '../components/layout';
-import Seo from '../components/seo';
+import Layout from '../components/layout/layout';
+import Seo from '../components/common/seo';
 
 const topMenu = css`
     margin: '0 15px';
