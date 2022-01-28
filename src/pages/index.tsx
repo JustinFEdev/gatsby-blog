@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 
 import Layout from '../components/layout/layout';
 import Seo from '../components/common/seo';
 
 const topMenu = css`
-    margin: '0 15px';
+    color: red;
+    font-size: 50px;
 `;
 
 const IndexPage = () => {
@@ -32,15 +33,15 @@ const IndexPage = () => {
                 </ul>
             </div>
             <div style={{ height: '100vh', border: '1px solid', width: '100%' }}>
-                <h1>empty area</h1>
-                <StaticImage
+                <div css={topMenu}>사이즈 맞추기</div>
+                {/* <StaticImage
                     src="../images/gatsby-astronaut.png"
                     width={300}
                     quality={95}
                     formats={['auto', 'webp', 'avif']}
                     alt="A Gatsby astronaut"
                     style={{ marginBottom: `1.45rem` }}
-                />
+                /> */}
             </div>
         </Layout>
     );
