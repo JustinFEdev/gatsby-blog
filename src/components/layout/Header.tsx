@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 const Header = ({ siteTitle }: any) => (
+    // 상단 헤더
     <header
         style={{
             background: `rebeccapurple`,

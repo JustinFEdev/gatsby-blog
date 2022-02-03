@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-// import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 
 import Layout from '../components/layout/layout';
@@ -16,32 +16,42 @@ const IndexPage = () => {
         <Layout>
             <Seo title="Home" />
             <div style={{ textAlign: 'center' }}>
-                <h1>Justin's WebSite</h1>
-                <ul style={{ display: 'flex' }}>
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/page-2/">첫번째 페이지</Link>
+                {/* <h1>Justin's Dev Log</h1> */}
+                <ul
+                    style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#000',
+                        outline: 'none',
+                        listStyleType: 'none',
+                    }}
+                >
+                    <li style={{ margin: '0 20px', textDecoration: 'none' }}>
+                        <Link to="/Me/">Justin</Link>
                     </li>
                     <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-typescript/">두번째 페이지</Link>
+                        <Link to="/using-typescript/">Post</Link>
                     </li>
                     <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-ssr">세번째 페이지</Link> <br />
+                        <Link to="/using-ssr">Tags</Link> <br />
                     </li>
                     <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-dsg">네번째 페이지</Link> <br />
+                        <Link to="/using-dsg">Else</Link> <br />
                     </li>
                 </ul>
             </div>
-            <div style={{ height: '100vh', border: '1px solid', width: '100%' }}>
-                <div css={topMenu}>사이즈 맞추기</div>
-                {/* <StaticImage
+            <div style={{ height: '100vh', border: '1px solid', width: '100%', padding: 30 }}>
+                <h1 css={topMenu}>사이즈 맞추기</h1>
+                <StaticImage
                     src="../images/gatsby-astronaut.png"
                     width={300}
                     quality={95}
                     formats={['auto', 'webp', 'avif']}
                     alt="A Gatsby astronaut"
                     style={{ marginBottom: `1.45rem` }}
-                /> */}
+                />
             </div>
         </Layout>
     );
