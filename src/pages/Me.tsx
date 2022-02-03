@@ -1,20 +1,43 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
+
+import Common from '../components/common';
 import Layout from '../components/layout/layout';
 import Seo from '../components/common/seo';
 
-const Me = () => {
+const containerStyle = css`
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    border: 1px solid;
+    height: auto;
+    min-height: 80vh;
+`;
+
+const MePage = () => {
     return (
         <Layout>
             <Seo title="Page Me" />
-            <div style={{ border: '1px solid', height: 'auto', minHeight: '80vh' }}>
+            <Common.Container css={containerStyle}>
                 <h1>Hi from the My page</h1>
-            </div>
-            <footer>
-                <Link to="/">Go back to the homepage</Link>
-            </footer>
+                <main className="main-contents">
+                    <Common.Section className="intro">
+                        <h2>Introduction</h2>
+                        <Common.Column className="intro_text">
+                            <p>I'm FrontEnd</p>
+                        </Common.Column>
+                    </Common.Section>
+
+                    <Common.Section className="exp">
+                        <h2>Experience</h2>
+                    </Common.Section>
+
+                    <Common.Section className="skills">
+                        <h2>Skills</h2>
+                    </Common.Section>
+                </main>
+            </Common.Container>
         </Layout>
     );
 };
@@ -27,4 +50,4 @@ export const query = graphql`
     }
 `;
 
-export default Me;
+export default MePage;
