@@ -17,9 +17,17 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.16.7",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@emotion/eslint-plugin": "^11.7.0",
     "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@typescript-eslint/parser": "^5.10.1",
+    "customize-cra": "^1.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^7.0.0",
     "gatsby": "^4.5.4",
-    "gatsby-plugin-emotion": "^7.5.0",
+    "gatsby-plugin-emotion": "^7.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.5.2",
@@ -32,6 +40,7 @@
     "gatsby-transformer-sharp": "^4.5.0",
     "prop-types": "^15.8.0",
     "react": "^17.0.1",
+    "react-app-rewired": "^2.1.11",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "yarn": "^1.22.17"

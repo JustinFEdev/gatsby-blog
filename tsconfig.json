@@ -7,6 +7,7 @@
 		"jsx": "react-jsx" /* Specify JSX code generation: 'preserve', 'react-native', 'react', 'react-jsx' or 'react-jsxdev'. */,
 		"removeComments": true /* Do not emit comments to output. */,
 		"moduleResolution": "node",
+		"jsxImportSource": "@emotion/react",
 		"strict": true /* Enable all strict type-checking options. */,
 		"noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
 		"alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
