@@ -2,34 +2,34 @@ import React from 'react';
 import { css } from '@emotion/react';
 import { flexMixin } from '../../styles/mixin';
 
-type Props = colType & {
+type Props = rowType & {
     children: React.ReactNode;
     className?: string;
 };
 
-type colType = {
+type rowType = {
     direction?: string;
-    alignItem?: string;
+    alignItems?: string;
     justifyContents?: string;
 };
 
-const col = (params: colType) => css`
+const row = (params: rowType) => css`
     ${flexMixin(params)}
     width:100%;
 `;
 
-const Column: React.FC<Props> = ({
+const Row: React.FC<Props> = ({
     children,
     className,
-    direction = 'column',
-    alignItem = 'flex-start',
+    direction = 'row',
+    alignItems = 'flex-start',
     justifyContents = 'flex-start',
 }) => {
     return (
-        <div className={className} css={col({ direction, alignItem, justifyContents })}>
+        <div className={className} css={row({ direction, alignItems, justifyContents })}>
             {children}
         </div>
     );
 };
 
-export default Column;
+export default Row;
