@@ -34,7 +34,7 @@ const IndexPage = () => {
                         <Link to="/using-typescript/">Post</Link>
                     </li>
                     <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-ssr">Tags</Link> <br />
+                        <Link to="/Tag">Tags</Link> <br />
                     </li>
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/using-dsg">Else</Link> <br />
