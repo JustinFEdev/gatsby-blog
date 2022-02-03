@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
-const UsingSSR = ({ serverData }) => {
+const UsingSSR = ({}) => {
     return (
         <Layout>
             <Seo title="Using SSR" />
             <h1>SSR page</h1>
-            <img style={{ width: '300px' }} alt="A random dog" src={serverData.message} />
+            <img style={{ width: '300px' }} alt="A random dog" />
             <p>Welcome to a server side rendered page with a random dog photo</p>
             <p>
                 To learn more, head over to our{' '}

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { css } from '@emotion/react';
 
 import Common from '../components/common';
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
 const containerStyle = css`
