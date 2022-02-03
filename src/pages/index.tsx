@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
 const topMenu = css`
-    color: red;
+    color: #000;
     font-size: 50px;
 `;
 
@@ -19,7 +19,6 @@ const IndexPage = () => {
                 {/* <h1>Justin's Dev Log</h1> */}
                 <ul
                     style={{
-                        width: '100%',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -34,16 +33,16 @@ const IndexPage = () => {
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/using-typescript/">Post</Link>
                     </li>
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-ssr">Tags</Link> <br />
-                    </li>
+                    {/* <li style={{ margin: '0 20px' }}>
+                        <Link to="/Tag">Tags</Link> <br />
+                    </li> */}
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/using-dsg">Else</Link> <br />
                     </li>
                 </ul>
             </div>
-            <div style={{ height: '100vh', border: '1px solid', width: '100%', padding: 30 }}>
-                <h1 css={topMenu}>사이즈 맞추기</h1>
+            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}>
+                <h1 css={topMenu}>Who Am I?</h1>
                 <StaticImage
                     src="../images/gatsby-astronaut.png"
                     width={300}
