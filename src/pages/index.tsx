@@ -33,9 +33,9 @@ const IndexPage = () => {
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/using-typescript/">Post</Link>
                     </li>
-                    <li style={{ margin: '0 20px' }}>
+                    {/* <li style={{ margin: '0 20px' }}>
                         <Link to="/Tag">Tags</Link> <br />
-                    </li>
+                    </li> */}
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/using-dsg">Else</Link> <br />
                     </li>
