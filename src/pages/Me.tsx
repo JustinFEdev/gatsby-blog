@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
 import { css } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -8,9 +7,8 @@ import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
 const containerStyle = css`
-    max-width: 700px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 1rem;
     border: 1px solid;
     height: auto;
     min-height: 80vh;

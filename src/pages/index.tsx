@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { css } from '@emotion/react';
-
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
@@ -8,8 +6,9 @@ const IndexPage = () => {
     return (
         <Layout>
             <Seo title="Home" />
-
-            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}></div>
+            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}>
+                <h1>empty area</h1>
+            </div>
         </Layout>
     );
 };
