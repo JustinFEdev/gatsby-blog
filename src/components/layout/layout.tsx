@@ -20,7 +20,7 @@ const Layout: React.FC = ({ children }) => {
         <>
             <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
             <div style={{ textAlign: 'center' }}>
-                {/* <h1>Justin's Dev Log</h1> */}
+                <h1 style={{ border: '1px solid' }}>Justin's Dev Log</h1>
                 <ul
                     style={{
                         display: 'flex',

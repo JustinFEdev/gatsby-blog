@@ -15,17 +15,7 @@ const IndexPage = () => {
         <Layout>
             <Seo title="Home" />
 
-            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}>
-                <h1 css={topMenu}>Who Am I?</h1>
-                <StaticImage
-                    src="../images/gatsby-astronaut.png"
-                    width={300}
-                    quality={95}
-                    formats={['auto', 'webp', 'avif']}
-                    alt="A Gatsby astronaut"
-                    style={{ marginBottom: `1.45rem` }}
-                />
-            </div>
+            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}></div>
         </Layout>
     );
 };

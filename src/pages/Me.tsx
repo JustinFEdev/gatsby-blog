@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Common from '../components/common';
 import Layout from '../components/layout/Layout';
@@ -14,13 +15,27 @@ const containerStyle = css`
     height: auto;
     min-height: 80vh;
 `;
+const topMenu = css`
+    color: #000;
+    font-size: 50px;
+`;
 
 const MePage = () => {
     return (
         <Layout>
             <Seo title="Page Me" />
             <Common.Container css={containerStyle}>
-                <h1>Hi from the My page</h1>
+                <div>
+                    <h1 css={topMenu}>Who Am I?</h1>
+                    <StaticImage
+                        src="../images/Justin_1.jpg"
+                        width={300}
+                        quality={95}
+                        formats={['auto', 'webp', 'avif']}
+                        alt="It's me!"
+                        style={{ marginBottom: `1.45rem` }}
+                    />
+                </div>
                 <main className="main-contents">
                     <Common.Section className="intro">
                         <h2>Introduction</h2>
