@@ -6,19 +6,9 @@ import Header from './Header';
 import './layout.css';
 
 const Layout: React.FC = ({ children }) => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `);
-
     return (
         <>
-            <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <Header />
             <div style={{ textAlign: 'center' }}>
                 <h1 style={{ border: '1px solid' }}>Justin's Dev Log</h1>
                 <ul
