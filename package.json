@@ -14,7 +14,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.16.7",
@@ -46,6 +46,8 @@
     "yarn": "^1.22.17"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
     "@types/react-helmet": "^6.1.5",
     "husky": "^7.0.4",
     "jest": "^27.4.7",

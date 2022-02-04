@@ -2,9 +2,9 @@ import { graphql } from 'gatsby';
 import { css } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import Common from 'components/common';
-import Layout from 'components/layout/Layout';
-import Seo from 'components/common/seo';
+import Common from '../components/common';
+import Layout from '../components/layout/Layout';
+import Seo from '../components/common/seo';
 
 const containerStyle = css`
     margin: 2rem auto;
@@ -18,7 +18,7 @@ const topMenu = css`
     font-size: 50px;
 `;
 
-const MePage = () => {
+const MePage: React.FC = () => {
     return (
         <Layout>
             <Seo title="Page Me" />

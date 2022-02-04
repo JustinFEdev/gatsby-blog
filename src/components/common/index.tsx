@@ -9,4 +9,5 @@ export default {
     Container,
     Row,
     Section,
+    SEO,
 };
