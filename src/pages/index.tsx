@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Layout from '../components/layout/Layout';
-import Seo from '../components/common/seo';
+import Layout from 'components/layout/Layout';
+import Seo from 'components/common/seo';
 
 const IndexPage = () => {
     return (
