@@ -29,9 +29,9 @@ const Seo = ({ title, description = 'Blog posted about development', article = f
 
 const query = graphql`
     query SEO {
-        img: file(relativePath: { eq: "pageImage.png" }) {
-            publicURL
-        }
+        # img: file(relativePath: { eq: "pageImage.png" }) {
+        #     publicURL
+        # }
         site {
             siteMetadata {
                 defaultTitle: title

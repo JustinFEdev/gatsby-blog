@@ -55,12 +55,12 @@ const MePage: React.FC = () => {
     );
 };
 
-export const query = graphql`
-    query {
-        bg: file(relativePath: { eq: "about.jpg" }) {
-            publicURL
-        }
-    }
-`;
+// export const query = graphql`
+//     query {
+//         bg: file(relativePath: { eq: "about.jpg" }) {
+//             publicURL
+//         }
+//     }
+// `;
 
 export default MePage;
