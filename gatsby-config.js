@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `Justin DevLog`,
+        title: `Justin's DevLog`,
         description: `언제나 환영합니다.`,
         author: `Justin Park`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,

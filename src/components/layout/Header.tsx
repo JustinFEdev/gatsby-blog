@@ -7,7 +7,7 @@ const Header = ({ siteTitle }: any) => (
     <header
         style={{
             background: `rebeccapurple`,
-            marginBottom: `1.45rem`,
+            // marginBottom: `1.45rem`,
         }}
     >
         <div
@@ -15,19 +15,21 @@ const Header = ({ siteTitle }: any) => (
                 margin: `0 auto`,
                 maxWidth: 960,
                 padding: `1.45rem 1.0875rem`,
+                textAlign: 'center',
             }}
         >
-            <h1 style={{ margin: 0 }}>
-                <Link
-                    to="/"
-                    style={{
-                        color: `white`,
-                        textDecoration: `none`,
-                    }}
-                >
+            <Link
+                to="/"
+                style={{
+                    color: `white`,
+                    textDecoration: `none`,
+                }}
+            >
+                <h1 style={{ margin: 0 }}>
                     {siteTitle}
-                </Link>
-            </h1>
+                    Justin's Dev Log
+                </h1>
+            </Link>
         </div>
     </header>
 );

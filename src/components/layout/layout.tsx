@@ -9,8 +9,7 @@ const Layout: React.FC = ({ children }) => {
     return (
         <>
             <Header />
-            <div style={{ textAlign: 'center' }}>
-                <h1 style={{ border: '1px solid' }}>Justin's Dev Log</h1>
+            <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
                 <ul
                     style={{
                         display: 'flex',
@@ -21,6 +20,9 @@ const Layout: React.FC = ({ children }) => {
                         listStyleType: 'none',
                     }}
                 >
+                    <li style={{ margin: '0 20px', textDecoration: 'none' }}>
+                        <Link to="/">Home</Link>
+                    </li>
                     <li style={{ margin: '0 20px', textDecoration: 'none' }}>
                         <Link to="/Me/">Justin</Link>
                     </li>
