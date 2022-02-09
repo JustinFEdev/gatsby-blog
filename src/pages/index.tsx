@@ -1,57 +1,32 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
-import { css } from '@emotion/react';
-
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 
-const topMenu = css`
-    color: #000;
-    font-size: 50px;
-`;
-
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
     return (
         <Layout>
             <Seo title="Home" />
-            <div style={{ textAlign: 'center' }}>
-                {/* <h1>Justin's Dev Log</h1> */}
-                <ul
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#000',
-                        outline: 'none',
-                        listStyleType: 'none',
-                    }}
-                >
-                    <li style={{ margin: '0 20px', textDecoration: 'none' }}>
-                        <Link to="/Me/">Justin</Link>
-                    </li>
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-typescript/">Post</Link>
-                    </li>
-                    {/* <li style={{ margin: '0 20px' }}>
-                        <Link to="/Tag">Tags</Link> <br />
-                    </li> */}
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-dsg">Else</Link> <br />
-                    </li>
-                </ul>
+            <div style={{ backgroundColor: 'lightGreen', border: '1px solid', width: '100%', height: '350px' }}>
+                <h3>Image Area</h3>
+                <p>FrontEnd Dev</p>
             </div>
-            <div style={{ height: '100vh', border: '1px solid', padding: 30 }}>
-                <h1 css={topMenu}>Who Am I?</h1>
-                <StaticImage
-                    src="../images/gatsby-astronaut.png"
-                    width={300}
-                    quality={95}
-                    formats={['auto', 'webp', 'avif']}
-                    alt="A Gatsby astronaut"
-                    style={{ marginBottom: `1.45rem` }}
-                />
-            </div>
+            <section
+                style={{
+                    marginTop: '100px',
+                    width: '100%',
+                    padding: '30px 15px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid',
+                }}
+            >
+                <div style={{ width: '100%' }}>
+                    <h3>Contant Title</h3>
+                    <p style={{ width: 'auto', margin: 0, position: 'relative', border: '1px solid' }}>button</p>
+                </div>
+                <div style={{ width: '150px', border: '1px solid' }}>create date</div>
+            </section>
         </Layout>
     );
 };

@@ -10,10 +10,11 @@ type Props = {
     article?: boolean;
 };
 
-function Seo({ description = 'Blog posted about development', title, article = false }: Props) {
+const Seo = ({ title, description = 'Blog posted about development', article = false }: Props) => {
     const { site, img } = useStaticQuery(query);
     const { defaultTitle } = site.siteMetadata;
-
+    console.log('defaultTitle');
+    console.log(defaultTitle);
     return (
         <Helmet title={title || defaultTitle}>
             <meta name="title" content={title || defaultTitle} />
@@ -25,13 +26,13 @@ function Seo({ description = 'Blog posted about development', title, article = f
             {/* <meta property="og:image" content={img.publicURL} /> */}
         </Helmet>
     );
-}
+};
 
 const query = graphql`
     query SEO {
-        img: file(relativePath: { eq: "pageImage.png" }) {
-            publicURL
-        }
+        # img: file(relativePath: { eq: "pageImage.png" }) {
+        #     publicURL
+        # }
         site {
             siteMetadata {
                 defaultTitle: title
