@@ -1,8 +1,33 @@
 import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
+import { graphql } from 'gatsby';
+
+type Props = {
+    title: string;
+    description: string;
+    createDate: string;
+};
 
 const IndexPage: React.FC = () => {
+    const getToday = () => {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = ('0' + (1 + date.getMonth())).slice(-2);
+        let day = ('0' + date.getDate()).slice(-2);
+        return year + '-' + month + '-' + day;
+    };
+
+    const data = [
+        { title: 'title1', description: 'abc', createDate: getToday() },
+        { title: 'title2', description: 'abc1', createDate: getToday() },
+        { title: 'title3', description: 'abc2', createDate: getToday() },
+        { title: 'title4', description: 'abc3', createDate: getToday() },
+        { title: 'title5', description: 'abc4', createDate: getToday() },
+    ];
+    console.log('data');
+    console.log(data);
+
     return (
         <Layout>
             <Seo title="Home" />
@@ -21,14 +46,30 @@ const IndexPage: React.FC = () => {
                     border: '1px solid',
                 }}
             >
-                <div style={{ width: '100%' }}>
-                    <h3>Contant Title</h3>
-                    <p style={{ width: 'auto', margin: 0, position: 'relative', border: '1px solid' }}>button</p>
-                </div>
-                <div style={{ width: '150px', border: '1px solid' }}>create date</div>
+                {data.map((info, i) => {
+                    <>
+                        <div style={{ width: '100%' }} key={i}>
+                            <h3>{info.title}</h3>
+                            <p style={{ width: 'auto', margin: 0, position: 'relative', border: '1px solid' }}>
+                                {info.description}
+                            </p>
+                        </div>
+                        <div style={{ width: '150px', border: '1px solid' }}>{info.createDate}</div>
+                    </>;
+                })}
             </section>
         </Layout>
     );
 };
+
+// export const query = graphql`
+//     query {
+//         data {
+//             title
+//             description
+//             createDate
+//         }
+//     }
+// `;
 
 export default IndexPage;
