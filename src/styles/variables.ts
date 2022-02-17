@@ -1,4 +1,8 @@
 // color
+export const Colors = {
+    black: '#00000',
+    white: '#fffff',
+};
 
 // breakpoint
 export type BreakPointsType = 'sm' | 'md' | 'lg' | 'xl';
