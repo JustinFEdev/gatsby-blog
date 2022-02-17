@@ -1,13 +1,12 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-// import { useSiteMetadata } from '../../hooks/use-site-metadata';
+import { useSiteMetadata } from '../../hooks/use-site-metadata';
 import '../../styles/variables';
 import './layout.css';
 
-const Header = ({ siteTitle }: any) => {
-    // const { title } = useSiteMetadata();
-
+const Header = () => {
+    const { title } = useSiteMetadata();
     return (
         // 상단 헤더
         <header
@@ -30,7 +29,7 @@ const Header = ({ siteTitle }: any) => {
                         textDecoration: `none`,
                     }}
                 >
-                    <h1 style={{ margin: 0 }}>{siteTitle}</h1>
+                    <h1 style={{ margin: 0 }}>{title}</h1>
                 </Link>
             </div>
             <div

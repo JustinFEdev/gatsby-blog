@@ -1,32 +1,26 @@
 import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
-import { graphql } from 'gatsby';
-
-type Props = {
-    title: string;
-    description: string;
-    createDate: string;
-};
+import { graphql, useStaticQuery } from 'gatsby';
 
 const IndexPage: React.FC = () => {
-    const getToday = () => {
-        let date = new Date();
-        let year = date.getFullYear();
-        let month = ('0' + (1 + date.getMonth())).slice(-2);
-        let day = ('0' + date.getDate()).slice(-2);
-        return year + '-' + month + '-' + day;
-    };
+    // const getToday = () => {
+    //     let date = new Date();
+    //     let year = date.getFullYear();
+    //     let month = ('0' + (1 + date.getMonth())).slice(-2);
+    //     let day = ('0' + date.getDate()).slice(-2);
+    //     return year + '-' + month + '-' + day;
+    // };
 
-    const data = [
-        { title: 'title1', description: 'abc', createDate: getToday() },
-        { title: 'title2', description: 'abc1', createDate: getToday() },
-        { title: 'title3', description: 'abc2', createDate: getToday() },
-        { title: 'title4', description: 'abc3', createDate: getToday() },
-        { title: 'title5', description: 'abc4', createDate: getToday() },
-    ];
-    console.log('data');
-    console.log(data);
+    // const data = [
+    //     { title: 'title1', description: 'abc', createDate: getToday() },
+    //     { title: 'title2', description: 'abc1', createDate: getToday() },
+    //     { title: 'title3', description: 'abc2', createDate: getToday() },
+    //     { title: 'title4', description: 'abc3', createDate: getToday() },
+    //     { title: 'title5', description: 'abc4', createDate: getToday() },
+    // ];
+    // console.log('data');
+    // console.log(data);
 
     return (
         <Layout>
@@ -46,7 +40,7 @@ const IndexPage: React.FC = () => {
                     border: '1px solid',
                 }}
             >
-                {data.map((info, i) => {
+                {/* {data.map((info, i) => {
                     <>
                         <div style={{ width: '100%' }} key={i}>
                             <h3>{info.title}</h3>
@@ -56,20 +50,10 @@ const IndexPage: React.FC = () => {
                         </div>
                         <div style={{ width: '150px', border: '1px solid' }}>{info.createDate}</div>
                     </>;
-                })}
+                })} */}
             </section>
         </Layout>
     );
 };
-
-// export const query = graphql`
-//     query {
-//         data {
-//             title
-//             description
-//             createDate
-//         }
-//     }
-// `;
 
 export default IndexPage;
