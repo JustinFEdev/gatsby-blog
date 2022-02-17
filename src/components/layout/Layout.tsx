@@ -9,31 +9,6 @@ const Layout: React.FC = ({ children }) => {
     return (
         <>
             <Header />
-            <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <ul
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#000',
-                        outline: 'none',
-                        listStyleType: 'none',
-                    }}
-                >
-                    <li style={{ margin: '0 20px', textDecoration: 'none' }}>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li style={{ margin: '0 20px', textDecoration: 'none' }}>
-                        <Link to="/Me/">Justin</Link>
-                    </li>
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-typescript/">Post</Link>
-                    </li>
-                    <li style={{ margin: '0 20px' }}>
-                        <Link to="/Tag/">Tags</Link> <br />
-                    </li>
-                </ul>
-            </div>
             <div
                 style={{
                     margin: `0 auto`,
@@ -48,7 +23,6 @@ const Layout: React.FC = ({ children }) => {
                     }}
                 >
                     © {new Date().getFullYear()}, Built with
-                    {` `}
                     <a href="https://www.gatsbyjs.com">Gatsby</a>
                 </footer>
             </div>
