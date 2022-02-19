@@ -2,8 +2,9 @@ import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
 import { graphql, useStaticQuery } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC = ({ data }: any) => {
     // const getToday = () => {
     //     let date = new Date();
     //     let year = date.getFullYear();
@@ -19,8 +20,8 @@ const IndexPage: React.FC = () => {
     //     { title: 'title4', description: 'abc3', createDate: getToday() },
     //     { title: 'title5', description: 'abc4', createDate: getToday() },
     // ];
-    // console.log('data');
-    // console.log(data);
+    console.log('data');
+    console.log(data);
 
     return (
         <Layout>
@@ -33,6 +34,7 @@ const IndexPage: React.FC = () => {
                 style={{
                     marginTop: '100px',
                     width: '100%',
+
                     padding: '30px 15px',
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -40,20 +42,43 @@ const IndexPage: React.FC = () => {
                     border: '1px solid',
                 }}
             >
-                {/* {data.map((info, i) => {
-                    <>
-                        <div style={{ width: '100%' }} key={i}>
-                            <h3>{info.title}</h3>
-                            <p style={{ width: 'auto', margin: 0, position: 'relative', border: '1px solid' }}>
-                                {info.description}
-                            </p>
-                        </div>
-                        <div style={{ width: '150px', border: '1px solid' }}>{info.createDate}</div>
-                    </>;
-                })} */}
+                <div>
+                    {data.allMdx.nodes.map(
+                        (node: {
+                            id: React.Key;
+                            frontmatter: {
+                                title: React.ReactFragment;
+                                date: React.ReactFragment;
+                            };
+                            body: string & React.ReactNode;
+                        }): any => (
+                            <article style={{ border: '1px solid' }} key={node.id}>
+                                <div style={{ width: '100%' }}>
+                                    <h2>{node.frontmatter.title}</h2>
+                                    {/* <MDXRenderer>{node.body}</MDXRenderer> */}
+                                </div>
+                            </article>
+                        ),
+                    )}
+                </div>
             </section>
         </Layout>
     );
 };
+
+export const query = graphql`
+    query {
+        allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+            nodes {
+                id
+                frontmatter {
+                    title
+                    date
+                    ecerpt
+                }
+            }
+        }
+    }
+`;
 
 export default IndexPage;
