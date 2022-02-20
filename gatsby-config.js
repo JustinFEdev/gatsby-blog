@@ -15,18 +15,67 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-resolve-src',
         'gatsby-plugin-advanced-sitemap',
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+                feeds: [
+                    {
+                        serialize: ({ query: { site, allMdx } }) => {
+                            return allMdx.edges.map(edge => {
+                                return Object.assign({}, edge.node.frontmatter, {
+                                    description: edge.node.description,
+                                    date: edge.node.frontmatter.date,
+                                    url: site.siteMetadata.siteUrl + `/posts/${edge.node.slug}`,
+                                    guid: site.siteMetadata.siteUrl + `/posts/${edge.node.slug}`,
+                                    custom_elements: [{ 'content:encoded': edge.node.html }],
+                                });
+                            });
+                        },
+                        query: `
+                {
+                  allMdx(
+                    sort: { order: DESC, fields: [frontmatter___date] },
+                  ) {
+                    edges{
+                        node {
+                        html
+                        slug 
+                        frontmatter {
+                            title
+                            date   
+                            description
+                        }
+                        }
+                    }   
+                  }
+                }
+              `,
+                        output: '/rss.xml',
+                        title: "Your Site's RSS Feed",
+                        match: '^/posts/',
+                        link: 'https://feeds.feedburner.com/gatsby/blog',
+                    },
+                ],
+            },
+        },
         `gatsby-plugin-mdx`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `pages`,
                 path: `${__dirname}/src/pages`,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-mdx`,
-            options: {
-                extensions: [`.mdx`, `.md`],
             },
         },
         {

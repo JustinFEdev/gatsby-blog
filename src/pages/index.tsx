@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
-import { graphql, useStaticQuery } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const IndexPage: React.FC = ({ data }: any) => {
     // const getToday = () => {
@@ -12,14 +12,6 @@ const IndexPage: React.FC = ({ data }: any) => {
     //     let day = ('0' + date.getDate()).slice(-2);
     //     return year + '-' + month + '-' + day;
     // };
-
-    // const data = [
-    //     { title: 'title1', description: 'abc', createDate: getToday() },
-    //     { title: 'title2', description: 'abc1', createDate: getToday() },
-    //     { title: 'title3', description: 'abc2', createDate: getToday() },
-    //     { title: 'title4', description: 'abc3', createDate: getToday() },
-    //     { title: 'title5', description: 'abc4', createDate: getToday() },
-    // ];
     console.log('data');
     console.log(data);
 
@@ -34,7 +26,6 @@ const IndexPage: React.FC = ({ data }: any) => {
                 style={{
                     marginTop: '100px',
                     width: '100%',
-
                     padding: '30px 15px',
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -42,21 +33,34 @@ const IndexPage: React.FC = ({ data }: any) => {
                     border: '1px solid',
                 }}
             >
-                <div>
+                <div style={{ width: '100%' }}>
                     {data.allMdx.nodes.map(
                         (node: {
                             id: React.Key;
                             frontmatter: {
                                 title: React.ReactFragment;
                                 date: React.ReactFragment;
+                                description: React.ReactFragment;
+                                slug: React.ReactNode;
                             };
                             body: string & React.ReactNode;
                         }): any => (
-                            <article style={{ border: '1px solid' }} key={node.id}>
-                                <div style={{ width: '100%' }}>
-                                    <h2>{node.frontmatter.title}</h2>
-                                    {/* <MDXRenderer>{node.body}</MDXRenderer> */}
-                                </div>
+                            <article style={{ border: '1px solid', marginBottom: 50 }} key={node.id}>
+                                <Link to={`/posts/${node.frontmatter.slug}`}>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                            width: '100%',
+                                        }}
+                                    >
+                                        <h2>{node.frontmatter.title}</h2>
+                                        {/* <p>등록일자 :{getToday(node.frontmatter.date)}</p> */}
+                                        {/* <MDXRenderer>{node.body}</MDXRenderer> */}
+                                    </div>
+                                    <div>내용:{node.frontmatter.description}</div>
+                                </Link>
                             </article>
                         ),
                     )}
@@ -74,7 +78,8 @@ export const query = graphql`
                 frontmatter {
                     title
                     date
-                    ecerpt
+                    description
+                    slug
                 }
             }
         }
