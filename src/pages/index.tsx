@@ -37,16 +37,16 @@ const IndexPage: React.FC = ({ data }: any) => {
                     {data.allMdx.nodes.map(
                         (node: {
                             id: React.Key;
+                            slug: React.ReactNode;
                             frontmatter: {
                                 title: React.ReactFragment;
                                 date: React.ReactFragment;
                                 description: React.ReactFragment;
-                                slug: React.ReactNode;
                             };
                             body: string & React.ReactNode;
                         }): any => (
                             <article style={{ border: '1px solid', marginBottom: 50 }} key={node.id}>
-                                <Link to={`/posts/${node.frontmatter.slug}`}>
+                                <Link to={`/posts/${node.slug}`}>
                                     <div
                                         style={{
                                             display: 'flex',
@@ -75,11 +75,11 @@ export const query = graphql`
         allMdx(sort: { fields: frontmatter___date, order: DESC }) {
             nodes {
                 id
+                slug
                 frontmatter {
                     title
                     date
                     description
-                    slug
                 }
             }
         }
