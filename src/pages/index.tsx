@@ -12,8 +12,6 @@ const IndexPage: React.FC = ({ data }: any) => {
     //     let day = ('0' + date.getDate()).slice(-2);
     //     return year + '-' + month + '-' + day;
     // };
-    console.log('data');
-    console.log(data);
 
     return (
         <Layout>
@@ -41,7 +39,7 @@ const IndexPage: React.FC = ({ data }: any) => {
                             frontmatter: {
                                 title: React.ReactFragment;
                                 date: React.ReactFragment;
-                                description: React.ReactFragment;
+                                subtitle: React.ReactFragment;
                             };
                             body: string & React.ReactNode;
                         }): any => (
@@ -56,10 +54,9 @@ const IndexPage: React.FC = ({ data }: any) => {
                                         }}
                                     >
                                         <h2>{node.frontmatter.title}</h2>
-                                        {/* <p>등록일자 :{getToday(node.frontmatter.date)}</p> */}
-                                        {/* <MDXRenderer>{node.body}</MDXRenderer> */}
+                                        <p>등록일자 :{node.frontmatter.date}</p>
                                     </div>
-                                    <div>내용:{node.frontmatter.description}</div>
+                                    <div>내용:{node.frontmatter.subtitle}</div>
                                 </Link>
                             </article>
                         ),
@@ -79,7 +76,7 @@ export const query = graphql`
                 frontmatter {
                     title
                     date
-                    description
+                    subtitle
                 }
             }
         }

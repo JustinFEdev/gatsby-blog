@@ -43,17 +43,4 @@ const query = graphql`
     }
 `;
 
-// Seo.defaultProps = {
-//     lang: `en`,
-//     meta: [],
-//     description: ``,
-// };
-
-// Seo.propTypes = {
-//     description: PropTypes.string,
-//     lang: PropTypes.string,
-//     meta: PropTypes.arrayOf(PropTypes.object),
-//     title: PropTypes.string.isRequired,
-// };
-
 export default Seo;

@@ -54,8 +54,8 @@ module.exports = {
                         slug 
                         frontmatter {
                             title
+                            subtitle
                             date   
-                            description
                         }
                         }
                     }   
