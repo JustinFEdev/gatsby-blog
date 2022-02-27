@@ -3,7 +3,6 @@ import { Global, css } from '@emotion/react';
 
 import PropTypes from 'prop-types';
 import Header from './Header';
-import global from 'styles/global';
 import '../layout/layout.css';
 
 const Layout: React.FC = ({ children }) => {
