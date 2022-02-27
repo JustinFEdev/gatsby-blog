@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { css } from '@emotion/react';
-
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
-import Common from '../components/common';
-
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const IndexPage: React.FC = ({ data }: any) => {
     // const getToday = () => {
@@ -15,25 +12,26 @@ const IndexPage: React.FC = ({ data }: any) => {
     //     let day = ('0' + date.getDate()).slice(-2);
     //     return year + '-' + month + '-' + day;
     // };
-    const contentSection = css`
-        margin-top: 100px;
-        width: 100%;
-        padding: 30px 15px;
-        border: 1px solid;
-        border-radius: 15px;
-        margin-bottom: 50px;
-        background-color: lightblue;
-    `;
 
     return (
         <Layout>
-            <Seo title="Home | Justin's Devlog" />
+            <Seo title="Home" />
             <div style={{ backgroundColor: 'lightGreen', border: '1px solid', width: '100%', height: '350px' }}>
                 <h3>Image Area</h3>
                 <p>FrontEnd Dev</p>
             </div>
-            <section css={contentSection}>
-                <Common.Column>
+            <section
+                style={{
+                    marginTop: '100px',
+                    width: '100%',
+                    padding: '30px 15px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid',
+                }}
+            >
+                <div style={{ width: '100%' }}>
                     {data.allMdx.nodes.map(
                         (node: {
                             id: React.Key;
@@ -45,7 +43,7 @@ const IndexPage: React.FC = ({ data }: any) => {
                             };
                             body: string & React.ReactNode;
                         }): any => (
-                            <div style={{ border: '1px solid' }} key={node.id}>
+                            <article style={{ border: '1px solid', marginBottom: 50 }} key={node.id}>
                                 <Link to={`/posts/${node.slug}`}>
                                     <div
                                         style={{
@@ -55,15 +53,15 @@ const IndexPage: React.FC = ({ data }: any) => {
                                             width: '100%',
                                         }}
                                     >
-                                        <h3>{node.frontmatter.title}</h3>
+                                        <h2>{node.frontmatter.title}</h2>
                                         <p>등록일자 :{node.frontmatter.date}</p>
                                     </div>
                                     <div>내용:{node.frontmatter.subtitle}</div>
                                 </Link>
-                            </div>
+                            </article>
                         ),
                     )}
-                </Common.Column>
+                </div>
             </section>
         </Layout>
     );
