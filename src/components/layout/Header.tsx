@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { useSiteMetadata } from '../../hooks/use-site-metadata';
 import '../../styles/variables';
-import './layout.css';
 
 const Header = () => {
     const { title } = useSiteMetadata();
