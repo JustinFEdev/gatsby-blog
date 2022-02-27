@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
-    const blogTemplate = path.resolve('./src/templagte/blog-post.tsx');
+    const blogTemplate = path.resolve('./src/templates/blog-post.tsx');
     const res = await graphql(`
         {
             allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {

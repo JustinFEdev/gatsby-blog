@@ -23,7 +23,7 @@ const Layout: React.FC = ({ children }) => {
                     }}
                 >
                     © {new Date().getFullYear()}, Built with
-                    <a href="https://www.gatsbyjs.com">Gatsby</a>
+                    <a href="https://www.gatsbyjs.com/Me/"> Park Woojun</a>
                 </footer>
             </div>
         </>
