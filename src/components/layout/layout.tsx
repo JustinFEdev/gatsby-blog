@@ -8,6 +8,7 @@ import './layout.css';
 const Layout: React.FC = ({ children }) => {
     return (
         <>
+            {/* <Global css={global} /> */}
             <Header />
             <div
                 style={{
