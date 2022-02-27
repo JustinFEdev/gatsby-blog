@@ -14,7 +14,6 @@ const Layout: React.FC = ({ children }) => {
 
     return (
         <>
-            {/* <Global css={global} /> */}
             <Header />
             <div css={container}>
                 <main>{children}</main>
