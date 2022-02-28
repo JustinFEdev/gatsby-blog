@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql, Link } from 'gatsby';
 import SEO from '../components/common/seo';
 import Layout from 'components/layout/Layout';
