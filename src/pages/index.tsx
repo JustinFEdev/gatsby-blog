@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
-
+import Common from '../components/common';
 import Layout from '../components/layout/Layout';
 import Seo from '../components/common/seo';
-import Common from '../components/common';
-
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const IndexPage: React.FC = ({ data }: any) => {
     // const getToday = () => {

@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import { css } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
