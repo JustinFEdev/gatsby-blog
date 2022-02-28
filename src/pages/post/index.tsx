@@ -1,6 +1,5 @@
 import Layout from 'components/layout/Layout';
 import SEO from 'components/common/seo';
-import React from 'react';
 import { graphql } from 'gatsby';
 
 const PostPage = () => {

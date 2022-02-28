@@ -7,36 +7,46 @@ import './layout.css';
 
 const Header = () => {
     const { title } = useSiteMetadata();
+
+    // let prevScrollpos = window.pageYOffset;
+    // window.onscroll = function () {
+    //     let currentScrollPos = window.pageYOffset;
+    //     let navbar = document.getElementById('navbar');
+    //     if (prevScrollpos > currentScrollPos) {
+    //         navbar.style.top = '0';
+    //     } else {
+    //         navbar.style.top = '-100px';
+    //         navbar.style.backgroundColor = 'rgba(255,255,255,0.5)';
+    //     }
+    //     prevScrollpos = currentScrollPos;
+    // };
+
     return (
         // 상단 헤더
         <header
             style={{
                 background: `rebeccapurple`,
+                display: 'flex',
+                margin: `0 auto`,
+                padding: `1.45rem 1.0875rem`,
+                textAlign: 'center',
+                justifyContent: 'space-between',
+                alignItems: 'center',
             }}
+            // id="navbar"
         >
-            <div
+            <Link
+                to="/"
                 style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `1.45rem 1.0875rem`,
-                    textAlign: 'center',
+                    color: `white`,
+                    textDecoration: `none`,
                 }}
             >
-                <Link
-                    to="/"
-                    style={{
-                        color: `white`,
-                        textDecoration: `none`,
-                    }}
-                >
-                    <h1 style={{ margin: 0 }}>{title}</h1>
-                </Link>
-            </div>
+                <h1 style={{ margin: 0 }}>{title}</h1>
+            </Link>
             <div
                 style={{
                     textAlign: 'center',
-                    backgroundColor: '#ffff',
-                    border: '1px solid',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -47,7 +57,7 @@ const Header = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: '#000',
+                        color: '#ffff',
                         outline: 'none',
                         listStyleType: 'none',
                         margin: 0,
