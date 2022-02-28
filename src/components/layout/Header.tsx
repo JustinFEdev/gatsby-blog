@@ -59,7 +59,7 @@ const Header = () => {
                         <Link to="/Me/">Justin</Link>
                     </li>
                     <li style={{ margin: '0 20px' }}>
-                        <Link to="/using-typescript/">Post</Link>
+                        <Link to="/post/">Post</Link>
                     </li>
                     <li style={{ margin: '0 20px' }}>
                         <Link to="/Tag/">Tags</Link> <br />
