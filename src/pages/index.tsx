@@ -15,24 +15,41 @@ const IndexPage: React.FC = ({ data }: any) => {
     //     let day = ('0' + date.getDate()).slice(-2);
     //     return year + '-' + month + '-' + day;
     // };
+    const bannerArea = css`
+        background-color: #8ae38a;
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `;
+
     const contentSection = css`
         margin-top: 100px;
         width: 100%;
+    `;
+
+    const contentItem = css`
         padding: 30px 15px;
-        border: 1px solid;
         border-radius: 15px;
-        margin-bottom: 50px;
-        background-color: lightblue;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        box-shadow: 10px 5px 5px gray;
+        border: 1px solid lightgray;
+        &:hover {
+            background-color: lightyellow;
+            transition: 0.5s;
+        }
     `;
 
     return (
         <Layout>
             <Seo title="Home | Justin's Devlog" />
-            <div style={{ backgroundColor: 'lightGreen', border: '1px solid', width: '100%', height: '350px' }}>
-                <h3>Image Area</h3>
+            <div css={bannerArea}>
                 <p>FrontEnd Dev</p>
             </div>
             <section css={contentSection}>
+                <Link to={`/post/`}>Post 전체보기</Link>
                 <Common.Column>
                     {data.allMdx.nodes.map(
                         (node: {
@@ -45,8 +62,8 @@ const IndexPage: React.FC = ({ data }: any) => {
                             };
                             body: string & React.ReactNode;
                         }): any => (
-                            <div style={{ border: '1px solid' }} key={node.id}>
-                                <Link to={`/posts/${node.slug}`}>
+                            <Link to={`/posts/${node.slug}`}>
+                                <Common.Column css={contentItem} key={node.id}>
                                     <div
                                         style={{
                                             display: 'flex',
@@ -56,11 +73,11 @@ const IndexPage: React.FC = ({ data }: any) => {
                                         }}
                                     >
                                         <h3>{node.frontmatter.title}</h3>
-                                        <p>등록일자 :{node.frontmatter.date}</p>
+                                        <p>{node.frontmatter.date}</p>
                                     </div>
-                                    <div>내용:{node.frontmatter.subtitle}</div>
-                                </Link>
-                            </div>
+                                    <div>{node.frontmatter.subtitle}</div>
+                                </Common.Column>
+                            </Link>
                         ),
                     )}
                 </Common.Column>
@@ -77,7 +94,7 @@ export const query = graphql`
                 slug
                 frontmatter {
                     title
-                    date
+                    date(formatString: "YYYY.MM.DD")
                     subtitle
                 }
             }
